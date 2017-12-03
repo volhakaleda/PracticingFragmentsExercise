@@ -42,6 +42,8 @@ public class MainFragment extends Fragment {
                 bundle.putString("key for edit text", retrievedFromEditText);
                 nextFragment.setArguments(bundle);
 
+                fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+
                 fragmentTransaction.replace(R.id.fragment_container, nextFragment);
                 fragmentTransaction.addToBackStack("key");
                 fragmentTransaction.commit();
