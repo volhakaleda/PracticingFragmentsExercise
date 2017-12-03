@@ -30,9 +30,12 @@ public class NextFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_next, container, false);
 
         textView = (TextView) rootView.findViewById(R.id.next_fragment_text_view);
+
         Bundle bundle = getArguments();
         String textString = bundle.getString("key for edit text");
-        textView.setText(textString);
+
+        CheckingInput checkingInput = new CheckingInput(textString);
+        textView.setText(checkingInput.getValue());
 
 
         return rootView;
